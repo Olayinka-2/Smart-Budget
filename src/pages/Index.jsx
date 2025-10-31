@@ -51,6 +51,11 @@ const Index = () => {
                 <button className="text-blue-500 outline-none rounded-4xl px-4 py-2 self-center font-semibold text-xl bg-white cursor-pointer">
                   Getting Started
                 </button>
+                <div className=" mx-auto flex gap-2 items-center">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                  <div className="w-4 h-4 bg-white rounded-full"></div>
+                </div>
               </div>
             </div>
           </div>
