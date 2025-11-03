@@ -1,80 +1,113 @@
 import React from "react";
 import LoginLogo from "../assets/Logo2.png";
-import { Link } from "react-router-dom";
-import {FaGoogle, FaFacebook} from 'react-icons/fa';
+import { Link, useNavigate } from "react-router-dom";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex items-center justify-center h-screen overflow-hidden px-10">
-      <div className="flex flex-col gap-2 items-center max-w-xl text-center">
-        <img src={LoginLogo} alt="" className="w-27" />
-        <p className="text-2xl font-medium">Login to your account</p>
-        <p className="text-base font-thin">
-          Welcome back! Enter your details to login your account
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-200 px-6 md:px-10">
+      <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col items-center gap-6">
+        {/* Logo */}
+        <img src={LoginLogo} alt="App Logo" className="w-24 md:w-28" />
+
+        {/* Title */}
+        <div className="text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800">
+            Login to Your Account
+          </h2>
+          <p className="text-sm text-gray-500 mt-1">
+            Welcome back! Please enter your details below.
+          </p>
+        </div>
+
+        {/* Social Buttons */}
+        <div className="flex flex-col gap-3 w-full mt-4">
+          <button
+            onClick={() => navigate("/auth")}
+            className="flex items-center justify-center gap-3 w-full bg-gray-100 py-2.5 rounded-full hover:bg-gray-200 transition"
+          >
+            <FaGoogle className="text-red-500 text-lg" />
+            <span className="text-sm font-medium text-gray-700">
+              Sign in with Google
+            </span>
+          </button>
+
+          <button 
+          onClick={() => navigate("/auth")} className="flex items-center justify-center gap-3 w-full bg-gray-100 py-2.5 rounded-full hover:bg-gray-200 transition">
+            <FaFacebook className="text-blue-600 text-lg" />
+            <span className="text-sm font-medium text-gray-700">
+              Sign in with Facebook
+            </span>
+          </button>
+        </div>
+
+        {/* Divider */}
+        <div className="flex items-center gap-4 w-full my-2">
+          <div className="flex-1 h-px bg-gray-300"></div>
+          <span className="text-xs text-gray-400">OR</span>
+          <div className="flex-1 h-px bg-gray-300"></div>
+        </div>
+
+        {/* Login Form */}
+        <form className="w-full flex flex-col gap-4 text-left">
+          <div className="flex flex-col">
+            <label htmlFor="email" className="text-sm font-medium text-gray-600 mb-1">
+              Email
+            </label>
+            <input
+              required
+              type="email"
+              id="email"
+              className="border border-gray-300 rounded-xl py-2 px-4 focus:ring-2 focus:ring-blue-400 outline-none transition"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label htmlFor="password" className="text-sm font-medium text-gray-600 mb-1">
+              Password
+            </label>
+            <input
+              required
+              type="password"
+              id="password"
+              className="border border-gray-300 rounded-xl py-2 px-4 focus:ring-2 focus:ring-blue-400 outline-none transition"
+              placeholder="••••••••"
+            />
+          </div>
+
+          {/* Remember & Forgot */}
+          <div className="flex justify-between items-center text-sm">
+            <label className="flex items-center gap-2 text-gray-600">
+              <input type="checkbox" className="accent-blue-500" />
+              Remember me
+            </label>
+            <Link
+              to="/forgot-password"
+              className="text-blue-600 hover:underline"
+            >
+              Forgot password?
+            </Link>
+          </div>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-full font-semibold transition"
+          >
+            Log In
+          </button>
+        </form>
+
+        {/* Footer */}
+        <p className="text-xs text-gray-500 mt-3">
+          New here?{" "}
+          <Link to="/signup" className="text-blue-600 hover:underline">
+            Create an account
+          </Link>
         </p>
-        <div className="rounded-full bg-gray-200 py-2 px-8 w-full cursor-pointer hover:bg-gray-300 flex items-center justify-center gap-3">
-          <FaGoogle className="text-red-500"/>
-          <p className="font-medium text-sm">Sign in with Google</p>
-        </div>
-        <div className="rounded-full bg-gray-200 py-2 px-8 w-full cursor-pointer hover:bg-gray-300 flex items-center justify-center gap-3">
-          <FaFacebook className="text-blue-500" />
-          <p className="font-medium text-sm">Sign in with FaceBook</p>
-        </div>
-        <div className="flex items-center gap-5 w-full  my-3">
-          <div className="h-px flex-1 bg-gray-900"></div>
-          <div className="font-thin text-400 text-sm">Or continue with</div>
-          <div className="h-px flex-1 bg-gray-900"></div>
-        </div>
-        <div className="w-full">
-          <form action="" className="w-full text-left flex flex-col gap-2">
-            <div className="flex flex-col">
-              <label htmlFor="email">Email</label>
-              <input
-                required
-                type="email"
-                name="email"
-                id="email"
-                className="border border-gray-700 rounded-xl py-1 px-5 outline-0"
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="password">Password</label>
-              <input
-                required
-                type="password"
-                name="password"
-                id="password"
-                className="border border-gray-700 rounded-xl py-1 px-5 outline-0"
-              />
-            </div>
-            <div className="flex justify-between items-center">
-              <div className="inline-flex items-center gap-1">
-                <input type="checkbox" name="" id="" />
-                <Link>
-                  <p className="text-gray-500 text-xs">Remember login</p>
-                </Link>
-              </div>
-              <Link>
-                <p className="text-blue-500 underline text-xs">
-                  Forgotten Password?
-                </p>
-              </Link>
-            </div>
-            <div className="text-center mt-4">
-              <button className="bg-blue-500 text-white py-2 px-5 w-full rounded-full cursor-pointer hover:bg-blue-700">
-                Log in
-              </button>
-              <p className="text-xs mt-1">
-                New here?{" "}
-                <Link>
-                  <span className="text-blue-500 underline">
-                    create account
-                  </span>
-                </Link>
-              </p>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   );
