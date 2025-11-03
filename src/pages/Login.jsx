@@ -7,7 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-200 px-6 md:px-10">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-white via-blue-50 to-blue-200 px-6 md:px-10">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col items-center gap-6">
         {/* Logo */}
         <img src={LoginLogo} alt="App Logo" className="w-24 md:w-28" />
@@ -94,6 +94,7 @@ const Login = () => {
 
           {/* Submit */}
           <button
+          onClick={() => navigate('/dashboard')}
             type="submit"
             className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-full font-semibold transition"
           >
