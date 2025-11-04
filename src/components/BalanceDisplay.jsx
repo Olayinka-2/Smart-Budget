@@ -6,7 +6,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const BalanceDisplay = ({ balance = "$400,000" }) => {
   const [showBalance, setShowBalance] = useState(false);
   return (
-    <div className="bg-blue-500 flex justify-between items-center py-2 px-4 rounded-lg text-xs text-white font-thin">
+    <div className="bg-blue-500 flex justify-between items-center py-2 px-4 rounded-xl text-xs text-white font-thin">
       <div className="flex flex-col gap-1 ">
         <p>Available Balance</p>
         <div className="flex items-center gap-2">

@@ -27,7 +27,7 @@ const Index = () => {
         </div>
       ) : (
         <div className="relative flex flex-col md:flex-row flex-1 w-full md:items-center">
-          <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r md:from-white via-blue-50 to-blue-800 z-0"></div>
+          <div className="absolute inset-0 bg-linear-to-b md:bg-linear-to-r md:from-white via-blue-50 to-blue-800 z-0"></div>
 
           <div className="absolute inset-0 backdrop-blur-sm  z-0"></div>
 
@@ -40,7 +40,7 @@ const Index = () => {
                 className="-mt-10 mx-auto md:hidden max-w-xs"
               />
             </div>
-           <div className="flex-1 text-center md:text-left flex flex-col gap-6 md:gap-8 text-gray-800 max-w-lg">
+            <div className="flex-1 text-center md:text-left flex flex-col gap-6 md:gap-8 text-gray-800 max-w-lg">
               <h1 className="font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight text-blue-800">
                 Personal Finance & Budget App
               </h1>

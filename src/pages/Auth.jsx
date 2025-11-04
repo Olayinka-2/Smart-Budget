@@ -22,12 +22,10 @@ const Auth = () => {
           <div className="h-20 sm:h-24 md:h-28"></div>
         </div>
 
-        {/* User Email */}
         <p className="text-gray-800 text-center text-base sm:text-lg font-medium mt-4">
           SamuelIborida@gmail.com
         </p>
 
-        {/* Form */}
         <form className="w-full flex flex-col gap-5 mt-6">
           <div className="flex flex-col gap-2">
             <label
@@ -58,7 +56,6 @@ const Auth = () => {
           </button>
         </form>
 
-        {/* Footer */}
         <p className="text-xs text-gray-500 mt-6 text-center">
           Need help?{" "}
           <span className="text-blue-600 hover:underline cursor-pointer">
