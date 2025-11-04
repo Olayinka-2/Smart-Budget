@@ -25,7 +25,7 @@ const BalanceDisplay = ({ balance = "$400,000" }) => {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <Link>
+        <Link to={'/trHistory'}>
           <p>Transaction History</p>
         </Link>
         <button className="font-medium py-1 px-3 rounded-full bg-white text-blue-500">
