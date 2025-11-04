@@ -3,7 +3,7 @@ import { FaPiggyBank, FaHome, FaUserCircle } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({bgColor = true}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-white py-3 px-6 shadow-inner rounded-t-2xl flex justify-between items-center">
+    <footer className={`w-full ${bgColor && 'bg-white shadow-inner'} py-3 px-6 rounded-t-2xl flex justify-between items-center`}>
       {menuItems.map((item) => {
         const isActive = location.pathname === item.path;
 
@@ -27,14 +27,14 @@ const Footer = () => {
           >
             <div
               className={`text-2xl ${
-                isActive ? "text-blue-500" : "text-gray-500"
+                isActive ? "text-blue-500" : "text-gray-700"
               }`}
             >
               {item.icon}
             </div>
             <p
               className={`text-xs font-medium mt-1 ${
-                isActive ? "text-blue-500" : "text-gray-500"
+                isActive ? "text-blue-500" : "text-gray-700"
               }`}
             >
               {item.name}
