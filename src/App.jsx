@@ -12,7 +12,7 @@ import TransactionHistory from "./pages/TransactionHistory";
 const App = () => {
   return (
     <div className="w-full min-h-screen flex justify-center items-center 
-                    bg-gradient-to-br from-gray-100 via-blue-50 to-blue-100
+                    bg-linear-to-br from-gray-100 via-blue-50 to-blue-100
                     sm:from-gray-50 sm:via-blue-100 sm:to-gray-200">
 
       <div className="w-full sm:w-[420px] lg:w-[460px] bg-white min-h-screen sm:min-h-[90vh]
