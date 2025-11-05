@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Index from "./pages/Index";
 import Login from "./pages/Login";
-import Auth from "./pages/auth";
+import Auth from "./pages/Auth";
 import DashBoard from "./pages/DashBoard";
 import Savings from "./pages/Savings";
 import Alert from "./pages/Alert";
