@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import profile from "../assets/loginProfile.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
+  const navigate = useNavigate()
+  const loginInput = useRef();
+  const handleClick = (e)=> {
+    e.preventDefault();
+    if(loginInput.current.value.length > 0) {
+      navigate('/dashboard')
+    }
+  }
   return (
     <div className="min-h-screen flex justify-center items-center bg-gradient-to-b from-blue-50 via-white to-blue-100 px-4">
       <div className="relative w-full max-w-sm bg-white rounded-3xl shadow-xl pt-20 pb-10 px-6 flex flex-col items-center">
@@ -26,7 +35,8 @@ const Auth = () => {
           SamuelIborida@gmail.com
         </p>
 
-        <form className="w-full flex flex-col gap-5 mt-6">
+        <form className="w-full flex flex-col gap-5 mt-6"
+        onSubmit={handleClick}>
           <div className="flex flex-col gap-2">
             <label
               htmlFor="password"
@@ -35,7 +45,9 @@ const Auth = () => {
               Password
             </label>
             <input
+            ref={loginInput}
               type="password"
+              required
               id="password"
               placeholder="Enter your password"
               className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-400 outline-none transition"

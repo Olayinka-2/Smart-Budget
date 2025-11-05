@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LoginLogo from "../assets/Logo2.png";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
@@ -6,8 +6,34 @@ import { FaGoogle, FaFacebook } from "react-icons/fa";
 const Login = () => {
   const navigate = useNavigate();
 
+  // ✅ Form state
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  // ✅ Handle form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email.includes("@")) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    if (password.length <= 5) {
+      setError("Password must be more than 5 characters.");
+      return;
+    }
+
+    // Clear error if all good
+    setError("");
+
+    // Simulate login success
+    navigate("/dashboard");
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-white via-blue-50 to-blue-200 px-6 md:px-10">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-blue-200 px-6 md:px-10">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10 flex flex-col items-center gap-6">
         {/* Logo */}
         <img src={LoginLogo} alt="App Logo" className="w-24 md:w-28" />
@@ -34,8 +60,10 @@ const Login = () => {
             </span>
           </button>
 
-          <button 
-          onClick={() => navigate("/auth")} className="flex items-center justify-center gap-3 w-full bg-gray-100 py-2.5 rounded-full hover:bg-gray-200 transition">
+          <button
+            onClick={() => navigate("/auth")}
+            className="flex items-center justify-center gap-3 w-full bg-gray-100 py-2.5 rounded-full hover:bg-gray-200 transition"
+          >
             <FaFacebook className="text-blue-600 text-lg" />
             <span className="text-sm font-medium text-gray-700">
               Sign in with Facebook
@@ -51,35 +79,50 @@ const Login = () => {
         </div>
 
         {/* Login Form */}
-        <form className="w-full flex flex-col gap-4 text-left">
+        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4 text-left">
           <div className="flex flex-col">
-            <label htmlFor="email" className="text-sm font-medium text-gray-600 mb-1">
+            <label
+              htmlFor="email"
+              className="text-sm font-medium text-gray-600 mb-1"
+            >
               Email
             </label>
             <input
-              required
               type="email"
               id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
               className="border border-gray-300 rounded-xl py-2 px-4 focus:ring-2 focus:ring-blue-400 outline-none transition"
               placeholder="you@example.com"
             />
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="password" className="text-sm font-medium text-gray-600 mb-1">
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-gray-600 mb-1"
+            >
               Password
             </label>
             <input
-              required
               type="password"
               id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
               className="border border-gray-300 rounded-xl py-2 px-4 focus:ring-2 focus:ring-blue-400 outline-none transition"
               placeholder="••••••••"
             />
           </div>
 
+          {/* Error Message */}
+          {error && (
+            <p className="text-xs text-red-500 mt-1">{error}</p>
+          )}
+
           {/* Remember & Forgot */}
-          <div className="flex justify-between items-center text-sm">
+          <div className="flex justify-between items-center text-sm mt-1">
             <label className="flex items-center gap-2 text-gray-600">
               <input type="checkbox" className="accent-blue-500" />
               Remember me
@@ -94,7 +137,6 @@ const Login = () => {
 
           {/* Submit */}
           <button
-          onClick={() => navigate('/dashboard')}
             type="submit"
             className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-full font-semibold transition"
           >

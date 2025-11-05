@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { FaArrowDown, FaArrowLeft, FaHistory } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
+import { FaArrowDown, FaHistory } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
 
 const transactionsData = {
@@ -76,7 +78,7 @@ const TransactionHistory = () => {
         <div className="flex flex-col gap-3 w-[90%] mx-auto mb-5">
           <div className="flex justify-between items-center">
             <Link to='/dashboard'>
-              <FaArrowLeft className="text-lg font-semibold" />
+              <BsArrowLeft className="text-lg font-semibold" />
             </Link>
             <p className="text-blue-500 text-xl font-medium">Download</p>
           </div>
