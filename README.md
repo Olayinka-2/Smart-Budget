@@ -1,16 +1,57 @@
-# React + Vite
+🏦 SmartBudget — Fintech Savings App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SaveWise is a personal finance and savings app designed to help users track their spending, view transactions, and manage savings goals — all in one place.
+Built entirely with React and Tailwind CSS, the app currently focuses on frontend design and layout, with room for future backend or API integration.
 
-Currently, two official plugins are available:
+✨ What the App Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+💰 Helps users save money and monitor their finances easily.
 
-## React Compiler
+📊 Displays charts and insights using ApexCharts for financial visualization.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧾 Shows transaction history grouped by month.
 
-## Expanding the ESLint configuration
+📱 Responsive design that works smoothly on mobile and desktop.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🎨 Simple, clean interface that gives a professional fintech experience.
+
+⚙️ How to Run the App Locally
+
+Follow these steps to set up and run the project:
+
+# 1️⃣ Clone the repository
+git clone https://github.com/Olayinka-2/Smart-Budget.git
+
+# 2️⃣ Navigate into the project directory
+cd Smart-Budget
+
+# 3️⃣ Install dependencies
+npm install
+
+# 4️⃣ Start the development server
+npm run dev
+
+
+Once the app starts, open your browser and visit:
+👉 http://localhost:5173
+ (or the port shown in your terminal)
+
+🛠️ Built With
+
+React.js — for building the user interface
+
+Tailwind CSS — for styling and responsiveness
+
+ApexCharts — for displaying charts and insights
+
+JavaScript (ES6+)
+
+🧩 Future Enhancements
+
+🔗 Add backend integration (e.g., Firebase or Node.js)
+
+💳 Implement authentication and real transaction data
+
+📈 Include advanced analytics and savings goals
+
+🌐 Connect with APIs for real-time financial data
